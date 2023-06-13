@@ -26,7 +26,7 @@ export default {
     let chart = null
     const darkMode = useDark()
     const { textColor, gridColor, tooltipBodyColor, tooltipBgColor, tooltipBorderColor } = chartColors
-    
+
     onMounted(() => {
       const ctx = canvas.value
       chart = new Chart(ctx, {
@@ -55,7 +55,7 @@ export default {
               },
               grid: {
                 color: darkMode.value ? gridColor.dark : gridColor.light,
-              },              
+              },
             },
             x: {
               stacked: true,
@@ -128,7 +128,7 @@ export default {
           chart.options.plugins.tooltip.borderColor = tooltipBorderColor.light
         }
         chart.update('none')
-      })    
+      })
 
     return {
       canvas,

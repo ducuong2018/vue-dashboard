@@ -1,10 +1,10 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
 
 // https://vitejs.dev/config/
 export default defineConfig({
   define: {
-    'process.env': process.env
+    "process.env": process.env,
   },
   plugins: [vue()],
   resolve: {
@@ -20,6 +20,6 @@ export default defineConfig({
   build: {
     commonjsOptions: {
       transformMixedEsModules: true,
-    }
-  }
-})
+    },
+  },
+});

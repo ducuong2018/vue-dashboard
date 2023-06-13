@@ -7,7 +7,7 @@
       <ul ref="legend" class="text-sm divide-y divide-slate-100 dark:divide-slate-700"></ul>
       <ul class="text-sm divide-y divide-slate-100 dark:divide-slate-700"></ul>
     </div>
-  </div>  
+  </div>
 </template>
 
 <script>
@@ -34,14 +34,14 @@ export default {
     const legend = ref(null)
     let chart = null
     const darkMode = useDark()
-    const { tooltipBodyColor, tooltipBgColor, tooltipBorderColor } = chartColors    
-    
+    const { tooltipBodyColor, tooltipBgColor, tooltipBorderColor } = chartColors
+
     onMounted(() => {
 
       // Calculate sum of values
       const reducer = (accumulator, currentValue) => accumulator + currentValue
       const values = props.data.datasets.map(x => x.data.reduce(reducer))
-      const max = values.reduce(reducer)    
+      const max = values.reduce(reducer)
 
       const ctx = canvas.value
       chart = new Chart(ctx, {
@@ -79,7 +79,7 @@ export default {
               },
               bodyColor: darkMode.value ? tooltipBodyColor.dark : tooltipBodyColor.light,
               backgroundColor: darkMode.value ? tooltipBgColor.dark : tooltipBgColor.light,
-              borderColor: darkMode.value ? tooltipBorderColor.dark : tooltipBorderColor.light,               
+              borderColor: darkMode.value ? tooltipBorderColor.dark : tooltipBorderColor.light,
             },
           },
           interaction: {
@@ -136,7 +136,7 @@ export default {
               wrapper.appendChild(label)
             })
           },
-        }],     
+        }],
       })
     })
 
@@ -155,7 +155,7 @@ export default {
           chart.options.plugins.tooltip.borderColor = tooltipBorderColor.light
         }
         chart.update('none')
-      })      
+      })
 
     return {
       canvas,
