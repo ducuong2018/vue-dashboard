@@ -1,9 +1,11 @@
 <template>
-  <div class="flex flex-col col-span-full sm:col-span-6 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
+  <div
+    class="flex flex-col col-span-full sm:col-span-6 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
     <header class="px-5 py-4 border-b border-slate-100 dark:border-slate-700 flex items-center">
       <h2 class="font-semibold text-slate-800 dark:text-slate-100">Real Time Value</h2>
       <Tooltip class="ml-2">
-        <div class="text-xs text-center whitespace-nowrap">Built with <a class="underline" href="https://www.chartjs.org/" target="_blank" rel="noreferrer">Chart.js</a></div>
+        <div class="text-xs text-center whitespace-nowrap">Built with <a class="underline" href="https://www.chartjs.org/"
+            target="_blank" rel="noreferrer">Chart.js</a></div>
       </Tooltip>
     </header>
     <!-- Chart built with Chart.js 3 -->
@@ -18,7 +20,7 @@ import Tooltip from '../../components/Tooltip.vue'
 import RealtimeChart from '../../charts/RealtimeChart.vue'
 
 // Import utilities
-import { tailwindConfig, hexToRGB } from '../../utils/Utils'
+import { tailwindConfig, hexToRGB } from '@utils'
 
 export default {
   name: 'DashboardCard05',
@@ -45,7 +47,7 @@ export default {
       50.91, 58.52, 53.37, 57.58, 59.09, 59.36, 58.71, 59.42, 55.93, 57.71,
       50.62, 56.28, 57.37, 53.08, 55.94, 55.82, 53.94, 52.65, 50.25,
     ]
-    
+
     const slicedData = ref(sampleData.slice(0, range.value))
 
     // Generate fake dates from now to back in time
@@ -57,7 +59,7 @@ export default {
       })
       return dates
     }
-    
+
     const slicedLabels = ref(generateDates().slice(0, range.value).reverse())
 
     // Fake update every 2 seconds
@@ -78,7 +80,7 @@ export default {
         range.value = 0;
       }
       slicedData.value.shift();
-      slicedData.value.push(sampleData[range.value]);      
+      slicedData.value.push(sampleData[range.value]);
       slicedLabels.value.shift()
       slicedLabels.value.push(new Date())
     })
@@ -110,7 +112,7 @@ export default {
       slicedLabels,
       interval,
       chartData,
-    }  
-  }  
+    }
+  }
 }
 </script>

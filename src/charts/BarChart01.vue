@@ -18,7 +18,7 @@ import {
 import 'chartjs-adapter-moment'
 
 // Import utilities
-import { tailwindConfig, formatValue } from '../utils/Utils'
+import { tailwindConfig, formatValue } from '@utils'
 
 Chart.register(BarController, BarElement, LinearScale, TimeScale, Tooltip, Legend)
 

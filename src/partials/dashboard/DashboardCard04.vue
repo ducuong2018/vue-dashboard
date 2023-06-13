@@ -1,5 +1,6 @@
 <template>
-  <div class="flex flex-col col-span-full sm:col-span-6 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
+  <div
+    class="flex flex-col col-span-full sm:col-span-6 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
     <header class="px-5 py-4 border-b border-slate-100 dark:border-slate-700">
       <h2 class="font-semibold text-slate-800 dark:text-slate-100">Direct VS Indirect</h2>
     </header>
@@ -14,7 +15,7 @@ import { ref } from 'vue'
 import BarChart from '../../charts/BarChart01.vue'
 
 // Import utilities
-import { tailwindConfig } from '../../utils/Utils'
+import { tailwindConfig } from '@utils'
 
 export default {
   name: 'DashboardCard03',
@@ -55,7 +56,7 @@ export default {
 
     return {
       chartData,
-    }    
+    }
   }
 }
 </script>

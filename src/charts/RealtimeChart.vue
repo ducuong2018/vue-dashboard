@@ -1,7 +1,8 @@
 <template>
   <div class="px-5 py-3">
     <div class="flex items-start">
-      <div class="text-3xl font-bold text-slate-800 dark:text-slate-100 mr-2 tabular-nums">$<span ref="chartValue">57.81</span></div>
+      <div class="text-3xl font-bold text-slate-800 dark:text-slate-100 mr-2 tabular-nums">$<span
+          ref="chartValue">57.81</span></div>
       <div ref="chartDeviation" class="text-sm font-semibold text-white px-1.5 rounded-full"></div>
     </div>
   </div>
@@ -21,7 +22,7 @@ import {
 import 'chartjs-adapter-moment'
 
 // Import utilities
-import { tailwindConfig, formatValue } from '../utils/Utils'
+import { tailwindConfig, formatValue } from '@utils'
 
 Chart.register(LineController, LineElement, PointElement, LinearScale, TimeScale, Tooltip)
 
@@ -49,8 +50,8 @@ export default {
         chartDeviation.value.style.backgroundColor = tailwindConfig().theme.colors.emerald[500]
       }
       chartDeviation.value.innerHTML = `${diff > 0 ? '+' : ''}${diff.toFixed(2)}%`
-    }    
-    
+    }
+
     onMounted(() => {
       const ctx = canvas.value
       chart = new Chart(ctx, {
@@ -74,7 +75,7 @@ export default {
               },
               grid: {
                 color: darkMode.value ? gridColor.dark : gridColor.light,
-              },              
+              },
             },
             x: {
               type: 'time',
@@ -113,7 +114,7 @@ export default {
               titleColor: darkMode.value ? tooltipTitleColor.dark : tooltipTitleColor.light,
               bodyColor: darkMode.value ? tooltipBodyColor.dark : tooltipBodyColor.light,
               backgroundColor: darkMode.value ? tooltipBgColor.dark : tooltipBgColor.light,
-              borderColor: darkMode.value ? tooltipBorderColor.dark : tooltipBorderColor.light,               
+              borderColor: darkMode.value ? tooltipBorderColor.dark : tooltipBorderColor.light,
             },
           },
           interaction: {
@@ -137,7 +138,7 @@ export default {
         chart.data = data
         chart.update()
         // update header values
-        handleHeaderValues(data, chartValue, chartDeviation)        
+        handleHeaderValues(data, chartValue, chartDeviation)
       }
     )
 
@@ -162,7 +163,7 @@ export default {
           chart.options.plugins.tooltip.borderColor = tooltipBorderColor.light
         }
         chart.update('none')
-      })    
+      })
 
     return {
       canvas,

@@ -1,5 +1,6 @@
 <template>
-  <div class="flex flex-col col-span-full sm:col-span-6 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
+  <div
+    class="flex flex-col col-span-full sm:col-span-6 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
     <header class="px-5 py-4 border-b border-slate-100 dark:border-slate-700 flex items-center">
       <h2 class="font-semibold text-slate-800 dark:text-slate-100">Sales VS Refunds</h2>
       <Tooltip class="ml-2" size="lg">
@@ -17,7 +18,7 @@
       <!-- Change the height attribute to adjust the chart height -->
       <BarChart :data="chartData" width="595" height="248" />
     </div>
-  </div>  
+  </div>
 </template>
 
 <script>
@@ -26,7 +27,7 @@ import Tooltip from '../../components/Tooltip.vue'
 import BarChart from '../../charts/BarChart02.vue'
 
 // Import utilities
-import { tailwindConfig } from '../../utils/Utils'
+import { tailwindConfig } from '@utils'
 
 export default {
   name: 'DashboardCard09',
@@ -68,7 +69,7 @@ export default {
 
     return {
       chartData,
-    } 
+    }
   }
 }
 </script>

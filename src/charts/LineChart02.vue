@@ -13,7 +13,7 @@
   <!-- Chart built with Chart.js 3 -->
   <div class="grow">
     <canvas ref="canvas" :data="data" :width="width" :height="height"></canvas>
-  </div>  
+  </div>
 </template>
 
 <script>
@@ -27,7 +27,7 @@ import {
 import 'chartjs-adapter-moment'
 
 // Import utilities
-import { tailwindConfig, formatValue } from '../utils/Utils'
+import { tailwindConfig, formatValue } from '@utils'
 
 Chart.register(LineController, LineElement, Filler, PointElement, LinearScale, TimeScale, Tooltip)
 
@@ -41,7 +41,7 @@ export default {
     let chart = null
     const darkMode = useDark()
     const { textColor, gridColor, tooltipBodyColor, tooltipBgColor, tooltipBorderColor } = chartColors
-    
+
     onMounted(() => {
       const ctx = canvas.value
       chart = new Chart(ctx, {
@@ -55,7 +55,7 @@ export default {
             y: {
               border: {
                 display: false,
-              },              
+              },
               beginAtZero: true,
               ticks: {
                 maxTicksLimit: 5,
@@ -64,7 +64,7 @@ export default {
               },
               grid: {
                 color: darkMode.value ? gridColor.dark : gridColor.light,
-              },              
+              },
             },
             x: {
               type: 'time',
@@ -180,7 +180,7 @@ export default {
           chart.options.plugins.tooltip.borderColor = tooltipBorderColor.light
         }
         chart.update('none')
-      })      
+      })
 
     return {
       canvas,

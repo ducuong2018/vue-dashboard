@@ -6,7 +6,7 @@
     <div class="px-5 pt-2 pb-6">
       <ul ref="legend" class="flex flex-wrap justify-center -m-1"></ul>
     </div>
-  </div>  
+  </div>
 </template>
 
 <script>
@@ -20,7 +20,7 @@ import {
 import 'chartjs-adapter-moment'
 
 // Import utilities
-import { tailwindConfig } from '../utils/Utils'
+import { tailwindConfig } from '@utils'
 
 Chart.register(DoughnutController, ArcElement, TimeScale, Tooltip)
 
@@ -34,7 +34,7 @@ export default {
     let chart = null
     const darkMode = useDark()
     const { tooltipTitleColor, tooltipBodyColor, tooltipBgColor, tooltipBorderColor } = chartColors
-    
+
     onMounted(() => {
       const ctx = canvas.value
       chart = new Chart(ctx, {
@@ -54,7 +54,7 @@ export default {
               bodyColor: darkMode.value ? tooltipBodyColor.dark : tooltipBodyColor.light,
               backgroundColor: darkMode.value ? tooltipBgColor.dark : tooltipBgColor.light,
               borderColor: darkMode.value ? tooltipBorderColor.dark : tooltipBorderColor.light,
-            },            
+            },
           },
           interaction: {
             intersect: false,
@@ -109,7 +109,7 @@ export default {
               ul.appendChild(li)
             })
           },
-        }],        
+        }],
       })
     })
 
@@ -130,7 +130,7 @@ export default {
           chart.options.plugins.tooltip.borderColor = tooltipBorderColor.light
         }
         chart.update('none')
-      })         
+      })
 
     return {
       canvas,

@@ -13,7 +13,7 @@ import {
 import 'chartjs-adapter-moment'
 
 // Import utilities
-import { formatValue } from '../utils/Utils'
+import { formatValue } from '@utils'
 
 Chart.register(LineController, LineElement, Filler, PointElement, LinearScale, TimeScale, Tooltip)
 
@@ -26,7 +26,7 @@ export default {
     let chart = null
     const darkMode = useDark()
     const { tooltipBodyColor, tooltipBgColor, tooltipBorderColor, chartAreaBg } = chartColors
-    
+
     onMounted(() => {
       const ctx = canvas.value
 
@@ -98,7 +98,7 @@ export default {
           chart.options.plugins.tooltip.borderColor = tooltipBorderColor.light
         }
         chart.update('none')
-    })    
+      })
 
     return {
       canvas,

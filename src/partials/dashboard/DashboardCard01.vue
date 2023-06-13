@@ -1,15 +1,18 @@
 <template>
-  <div class="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
+  <div
+    class="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
     <div class="px-5 pt-5">
       <header class="flex justify-between items-start mb-2">
         <!-- Icon -->
         <img src="../../images/icon-01.svg" width="32" height="32" alt="Icon 01" />
         <EditMenu align="right" class="relative inline-flex">
           <li>
-            <a class="font-medium text-sm text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-200 flex py-1 px-3" href="#0">Option 1</a>
+            <a class="font-medium text-sm text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-200 flex py-1 px-3"
+              href="#0">Option 1</a>
           </li>
           <li>
-            <a class="font-medium text-sm text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-200 flex py-1 px-3" href="#0">Option 2</a>
+            <a class="font-medium text-sm text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-200 flex py-1 px-3"
+              href="#0">Option 2</a>
           </li>
           <li>
             <a class="font-medium text-sm text-rose-500 hover:text-rose-600 flex py-1 px-3" href="#0">Remove</a>
@@ -37,7 +40,7 @@ import LineChart from '../../charts/LineChart01.vue'
 import EditMenu from '../../components/DropdownEditMenu.vue'
 
 // Import utilities
-import { tailwindConfig, hexToRGB } from '../../utils/Utils'
+import { tailwindConfig, hexToRGB } from '@utils'
 
 export default {
   name: 'DashboardCard01',
@@ -77,7 +80,7 @@ export default {
           pointBackgroundColor: tailwindConfig().theme.colors.indigo[500],
           pointHoverBackgroundColor: tailwindConfig().theme.colors.indigo[500],
           pointBorderWidth: 0,
-          pointHoverBorderWidth: 0,          
+          pointHoverBorderWidth: 0,
           clip: 20,
         },
         // Gray line
@@ -96,7 +99,7 @@ export default {
           pointBackgroundColor: `rgba(${hexToRGB(tailwindConfig().theme.colors.slate[500])}, 0.25)`,
           pointHoverBackgroundColor: `rgba(${hexToRGB(tailwindConfig().theme.colors.slate[500])}, 0.25)`,
           pointBorderWidth: 0,
-          pointHoverBorderWidth: 0,               
+          pointHoverBorderWidth: 0,
           clip: 20,
         },
       ],
@@ -104,7 +107,7 @@ export default {
 
     return {
       chartData,
-    } 
+    }
   }
 }
 </script>
